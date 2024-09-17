@@ -1,0 +1,16 @@
+
+services:
+  mysql:
+    image: mariadb:11.1.2-jammy
+    environment:
+      MYSQL_ROOT_PASSWORD: 'password'
+      MYSQL_USER: 'thartsch'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_DATABASE: 'slimphp'
+    volumes:
+      - slimphp:/var/lib/mysql
+    ports:
+      - "3325:3306"
+    restart: always
+volumes:
+  slimphp: {}
