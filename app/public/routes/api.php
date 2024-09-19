@@ -1,20 +1,40 @@
 <?php
 
-    $app->get('/', function (Request $request, Response $response, $args) {
+use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Message\ServerRequestInterface as Request;
+use Slim\Factory\AppFactory;
 
-        $dsn = "mysql:host=localhost;dbname=slimphp;charset=utf8mb4";
+require __DIR__ . '/../../vendor/autoload.php';
+require __DIR__ . '/../../Config/db.php';
 
-        $pdo = new PDO($dsn,'thartsch', 'password',[
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-        ]);
+$app = AppFactory::create();
 
-        $stmt = $pdo->query('SELECT * FROM "players" ');
-
-        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        $body = json_encode($data);
-
-        $response->getBody()->write($body);
-
+$app->get('/players/', function (Request $request, Response $response) {
+    $response->getBody()->write("Hello world!");
     return $response;
-    });
+//    $sql = "SELECT * FROM players";
+//
+//    try {
+//        $db = new DB();
+//        $conn = $db->connect();
+//
+//        $stmt = $conn->query($sql);
+//        $players = $stmt->fetchAll(PDO::FETCH_OBJ);
+//
+//        $db = null;
+//
+//        $response->getBody()->write(json_encode($players));
+//        return $response
+//            ->withHeader('Content-Type', 'application/json')
+//            ->withStatus(200);
+//    } catch (PDOException $e) {
+//        $error = array(
+//            "error" => $e->getMessage()
+//        );
+//    }
+//
+//    $response->getBody()->write(json_encode($error));
+//    return $response
+//        ->withHeader('Content-Type', 'application/json')
+//        ->withStatus(500);
+});

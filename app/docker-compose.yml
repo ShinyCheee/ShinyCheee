@@ -4,7 +4,7 @@ services:
     image: mariadb:11.1.2-jammy
     environment:
       MYSQL_ROOT_PASSWORD: 'password'
-      MYSQL_USER: 'thartsch'
+      MYSQL_USER: 'root'
       MYSQL_PASSWORD: 'password'
       MYSQL_DATABASE: 'slimphp'
     volumes:

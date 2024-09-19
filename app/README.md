@@ -6,7 +6,7 @@
 - 😄 Pronouns: your/mom
 - ⚡ Fun fact: ...
 
-<!---
-ShinyCheee/ShinyCheee is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+How to load up server
+1. go into the public folter with Termnial
+2. php -S localhost:8888" to load up internal php application Server
+3. docker compose up -d to load up MySQL DB via Docker
