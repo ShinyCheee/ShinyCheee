@@ -1,0 +1,44 @@
+body {}
+
+#gameOverviewOverlay {
+    position: fixed;
+    top: 0;
+    left: -100px;
+    width: calc(100vw + 200px);
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 100vw;
+    grid-auto-rows: 1fr;
+    transition: grid-column-gap 1s ease-out;
+}
+
+#gameOverviewOverlay.loading {
+    !important; grid-column-gap: 0;
+}
+
+#gameOverviewOverlay.hover {
+    !important; grid-column-gap: 50vw;
+}
+
+#gameOverviewOverlay > * {
+    width: auto;
+    height: auto;
+    transform: skew(-10deg);
+}
+
+.team_color_1 {
+    background-color: #00A5E3;
+}
+
+.team_color_2 {
+    background-color: #20c997;
+}
+
+.team_color_3 {
+    background-color: #dc3545;
+}
+
+.team_color_4 {
+    background-color: #6f42c1;
+}
