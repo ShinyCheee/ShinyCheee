@@ -26,7 +26,7 @@
                 <button type="button" id="cancelSettings">Cancel</button>
             </div>
         </fieldset>
-        <input type="text" id="newPlayerName" placeholder="enter Player name...">
+        <input type="text" id="newPlayerName" placeholder="Enter Player Name...">
 
         <button type="button" id="addNewPlayer">+</button>
         <button type="button" id="confirmGameSettings">start</button>

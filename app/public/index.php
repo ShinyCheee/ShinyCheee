@@ -17,36 +17,22 @@ $app->get('/', function (Request $request, Response $response, $args) {
     ];
     $renderer = new PhpRenderer(__DIR__ . '/views/', $viewData);
 
-    return $renderer->render($response, 'index.php', [
-        'title' => 'Huan'
-    ]);
+    return $renderer->render($response, 'index.php', $viewData);
 });
 $app->get('/players', function (Request $request, Response $response) {
-    $sql = "SELECT * FROM players";
+    $sql = "SELECT * FROM players WHERE name = 'Tom'";
 
-    try {
         $db = new DB();
         $conn = $db->connect();
 
         $stmt = $conn->query($sql);
-        $players = $stmt->fetchAll(PDO::FETCH_OBJ);
+        $players = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         $db = null;
 
-        $response->getBody()->write(json_encode($players));
-        return $response
-            ->withHeader('Content-Type', 'application/json')
-            ->withStatus(200);
-    } catch (PDOException $e) {
-        $error = array(
-            "error" => $e->getMessage()
-        );
-    }
+        $renderer = new PhpRenderer(__DIR__ . '/views/', $players);
+        return $renderer->render($response, 'GameOverview.php', $players[0]);
 
-    $response->getBody()->write(json_encode($error));
-    return $response
-        ->withHeader('Content-Type', 'application/json')
-        ->withStatus(500);
 });
 
 $app->run();
