@@ -1,0 +1,11 @@
+body {}
+
+#additionalGameSettings {
+    position: fixed;
+    width: auto;
+    height: auto;
+}
+
+.popup_footer {
+    display: flex;
+}

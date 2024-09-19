@@ -8,6 +8,7 @@
         "laminas/laminas-diactoros": "^2.14",
       "ext-json": "*",
       "doctrine/orm": "*",
-        "php-di/php-di": "^5.4"
+        "php-di/php-di": "^5.4",
+        "slim/php-view": "^3.4"
     }
 }
