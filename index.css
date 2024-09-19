@@ -1,11 +1,30 @@
-body {}
+body {
+    align-content: center;
+}
+
+.grid {
+    display: grid;
+}
+
+form {
+    grid-template-columns: 1fr 5fr 1fr 1fr;
+}
 
 #additionalGameSettings {
     position: fixed;
-    width: auto;
+    width: fit-content;
     height: auto;
+    grid-template-columns: auto auto;
 }
 
 .popup_footer {
+    grid-column-start: 1;
+    grid-column-end: 3;
     display: flex;
+    justify-content: end;
+}
+
+form.grid > #playerTable {
+    grid-column-start: 2;
+    grid-column-end: 4;
 }

@@ -2,6 +2,7 @@ $(document).ready(function () {
     initSettingsButton()
     initCommitSettingsButton()
     initCancelSettingsButton()
+    initAddNewPlayerButton()
 })
 
 initSettingsButton = function () {
@@ -30,13 +31,22 @@ initCancelSettingsButton = function () {
 }
 
 initAddNewPlayerButton = function () {
-    $('#playerList').val()
+    $('#addNewPlayer').on('click', function () {
+        let newPlayerNameInput = $('#newPlayerName')
+        let newPlayerNameVal = newPlayerNameInput.val()
+        if (newPlayerNameVal === "") {
+            return
+        }
+        //TODO: ajax for player score
+        $('#playerTable > tbody').append('<tr><td>' + newPlayerNameVal + '</td></tr>')
+        newPlayerNameInput.val('')
+    })
 }
 
 openAdditionalGameSettings = function () {
-    $('#additionalGameSettings').prop('hidden', false)
+    $('#additionalGameSettings').addClass('grid')
 }
 
 closeAdditionalGameSettings = function () {
-    $('#additionalGameSettings').prop('hidden', true)
+    $('#additionalGameSettings').removeClass('grid')
 }

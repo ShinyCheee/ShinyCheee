@@ -9,24 +9,27 @@
 </head>
 <body>
     <h1>BeerTool</h1>
-    <form action="/" method="post">
-        <button type="button" id="settings">settings</button>
+    <form action="/" method="post" class="grid">
+        <button type="button" id="settings">*</button>
         <fieldset id="additionalGameSettings" hidden>
             <label for="timerLength">Timer Length in seconds: </label>
-            <input type="number" id="timerLength" value="300"/>
+            <input type="number" id="timerLength" min="60" value="300"/>
             <label for="tableAmount">Amount of tables: </label>
-            <input type="number" id="tableAmount" value="1">
+            <input type="number" id="tableAmount" min="1" value="1">
             <label for="teamSize">Team size: </label>
-            <input type="number" id="teamSize" value="1">
+            <input type="number" id="teamSize" min="1" value="1">
             <div class="popup_footer">
                 <button type="button" id="commitSettings">Commit</button>
                 <button type="button" id="cancelSettings">Cancel</button>
             </div>
         </fieldset>
         <input type="text" id="newPlayerName" placeholder="enter Player name...">
-
         <button type="button" id="addNewPlayer">+</button>
         <button type="button" id="confirmGameSettings">start</button>
+        <table id="playerTable">
+            <thead></thead>
+            <tbody></tbody>
+        </table>
     </form>
 </body>
 </html>
