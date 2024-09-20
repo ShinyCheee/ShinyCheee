@@ -6,14 +6,29 @@ body {
     display: grid;
 }
 
+h1 {
+    width: fit-content;
+    margin: auto;
+}
+
 form {
-    grid-template-columns: 1fr 5fr 1fr 1fr;
+    width: 50%;
+    margin: auto;
+    grid-template-columns: auto 1fr auto auto;
+    grid-gap: 0.2em;
+}
+
+form > button {
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 50%;
 }
 
 #additionalGameSettings {
-    position: fixed;
-    width: fit-content;
+    position: absolute;
+    width: 70%;
     height: auto;
+    margin: auto;
     grid-template-columns: auto auto;
 }
 
@@ -27,4 +42,13 @@ form {
 form.grid > #playerTable {
     grid-column-start: 2;
     grid-column-end: 4;
+
+}
+
+#playerTable tr {
+    margin-bottom: 0.2em;
+}
+
+#playerTable td {
+    border: 1px solid black;
 }

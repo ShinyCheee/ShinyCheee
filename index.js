@@ -38,7 +38,7 @@ initAddNewPlayerButton = function () {
             return
         }
         //TODO: ajax for player score
-        $('#playerTable > tbody').append('<tr><td>' + newPlayerNameVal + '</td></tr>')
+        $('#playerTable > tbody').append('<tr><td>' + newPlayerNameVal + '</td><td>Score: 110</td></tr>')
         newPlayerNameInput.val('')
     })
 }
